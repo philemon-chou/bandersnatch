@@ -20,9 +20,9 @@ class Database:
     load_dotenv()
     database = MongoClient(getenv("DB_URL"), tlsCAFile=where())["Database"]
 
-    def __init__(self, collection: str):
+    def __init__(self):
         # Create init function. Set collection to be pulling from database collection
-        self.collection = self.database[collection]
+        self.collection = self.database["Collection"]
 
     def seed(self, amount=1000):
         # Create seed function where amount is set to 1000
@@ -61,7 +61,6 @@ class Database:
 
 
 if __name__ == '__main__':
-    db = Database("Collection")
+    db = Database()
+    db.reset()
     db.seed()
-
-
