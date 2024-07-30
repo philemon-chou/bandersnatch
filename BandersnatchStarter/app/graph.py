@@ -4,7 +4,7 @@ from pandas import DataFrame
 '''This page is meant to connect the graph function with the main.py.
 with each of the variables (x,y,color,etc) connecting to what the functionality of main.py is calling for.'''
 
-
+#Graph connecting to main.py calling variables main.py set for
 def chart(df: DataFrame, x: str, y: str, target: str) -> Chart:
     graph = Chart(
         df,
@@ -16,6 +16,3 @@ def chart(df: DataFrame, x: str, y: str, target: str) -> Chart:
         tooltip=Tooltip(df.columns.to_list())
     )
     return graph
-
-if __name__ == '__main__':
-    pass
