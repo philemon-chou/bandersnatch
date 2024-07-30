@@ -9,10 +9,13 @@ from pandas import DataFrame
 from app.data import Database
 from app.graph import chart
 from app.machine import Machine
+'''This main.py page connects everthing follows, data, graph, and machine. each function calls for individual .py files associated
+with the function. This page simply calls for the variable from the other .py files
+'''
 
-SPRINT = 2
+#This is to display on the webpage what sprint we are on
+SPRINT = 3
 APP = Flask(__name__)
-
 
 @APP.route("/")
 def home():
